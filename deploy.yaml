@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: basic-k8s-demo
+
+  labels:
+
+    app: basic-k8s-demo
+
+spec:
+
+  replicas: 1
+
+  selector:
+
+    matchLabels:
+
+      app: demo
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: demo
+
+    spec:
+
+      containers:
+
+      - name: k8s-app-demo
+
+        image: viktech/basic-k8s-demo:v1
+
+        ports:
+
+        - containerPort: 6001
+
